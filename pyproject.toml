@@ -1,0 +1,43 @@
+[project]
+name = "allpairspy-stubs"
+version = "1.0.0"
+description = "PEP 561 type stubs for the 'allpairspy' Python library"
+authors = [
+    {name = "cpolish", email = "68736710+cpolish@users.noreply.github.com"},
+]
+dependencies = []
+requires-python = ">=3.11"
+classifiers = [
+    "Typing :: Stubs Only",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+readme = "README.md"
+license = "MPL-2.0"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/cpolish/allpairspy-stubs"
+Repository = "https://github.com/cpolish/allpairspy-stubs"
+Issues = "https://github.com/cpolish/allpairspy-stubs/issues"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.build]
+includes = ["src/**/*.pyi"]
+excludes = ["tests"]
+
+[dependency-groups]
+test = [
+    "mypy>=1.15.0",
+    "allpairspy>=2.5.1",
+]
